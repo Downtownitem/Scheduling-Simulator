@@ -25,11 +25,7 @@ export default function ProcessList({
   onKillProcess,
 }: ProcessListProps) {
   return (
-    <Card
-      className="flex flex-col gap-5 p-5 col-span-2"
-      shadow="lg"
-      radius="lg"
-    >
+    <Card className="flex flex-col gap-5 p-5 flex-grow" shadow="lg" radius="lg">
       <CardHeader className="flex items-center gap-2 p-0 text-black/40">
         <ElectronicsIcon className="size-5 " />
         <h2 className="font-medium">Procesos</h2>
@@ -56,18 +52,7 @@ export default function ProcessList({
             emptyContent={"No hay procesos en el sistema"}
           >
             {(process) => (
-              <TableRow
-                key={process.pid}
-                className={
-                  process.state === "running"
-                    ? "bg-green-100"
-                    : process.state === "finished"
-                    ? "bg-gray-100"
-                    : process.state === "ready"
-                    ? "bg-yellow-100"
-                    : "bg-blue-50"
-                }
-              >
+              <TableRow key={process.pid} className="h-12">
                 <TableCell>{process.pid}</TableCell>
                 <TableCell>{process.name}</TableCell>
                 <TableCell>

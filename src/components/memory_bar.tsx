@@ -10,12 +10,12 @@ export default function MemoryBar({ memory }: MemoryBarProps) {
   const percentageUsed = (memory.used / memory.total) * 100;
 
   return (
-    <Card className="flex flex-col gap-5 p-5" shadow="lg" radius="lg">
+    <Card className="flex flex-col gap-5 p-5 shrink-0" shadow="none" radius="lg">
       <CardHeader className="flex items-center gap-2 p-0 text-black/40">
         <StorageIcon className="size-5" />
         <h2 className="font-medium">Memoria</h2>
       </CardHeader>
-      <CardBody className="p-0">
+      <CardBody className="p-0 overflow-hidden">
         <Progress
           value={percentageUsed}
           color="primary"

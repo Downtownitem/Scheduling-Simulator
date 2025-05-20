@@ -34,7 +34,7 @@ export default function EditButton({ processes, editProcess }: Props) {
   const [editTimeout, setEditTimeout] = useState<number>(0);
 
   useEffect(() => {
-    if (processes.length > 0) {
+    if (processes.length > 0 && selectedProcessId === "") {
       setSelectedProcessId(processes[0].pid.toString());
     }
   }, [processes]);
@@ -142,7 +142,6 @@ export default function EditButton({ processes, editProcess }: Props) {
                     memoryRequired: editMemory,
                     timeout: editTimeout,
                   });
-                  setSelectedProcessId("");
                 }
               }}
               color="warning"

@@ -89,6 +89,7 @@ export default function AlgorithmConfig({
           <Button
             color="secondary"
             startContent={<SettingsIcon className="size-5" />}
+            fullWidth
           >
             Configuración
           </Button>

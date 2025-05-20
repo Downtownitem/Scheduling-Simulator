@@ -13,7 +13,7 @@ export default function MemoryConfig({ updateMemory, initialMemory }: Props) {
   return (
     <>
       <NumberInput
-        label="Total memoria disponible"
+        label="Total disponible"
         placeholder="Memoria disponible"
         endContent={
           <div className="pointer-events-none flex items-center">

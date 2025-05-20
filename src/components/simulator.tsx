@@ -329,8 +329,8 @@ export default function Simulator({
   };
 
   return (
-    <Card className="flex flex-col gap-5 p-5">
-      <CardHeader className="flex gap-2 justify-between p-0 items-center">
+    <Card className="flex flex-col gap-5 p-5" shadow="none" radius="lg">
+      <CardHeader className="flex gap-2 justify-between p-0 items-center shrink-0">
         <div className="flex gap-2 items-center text-black/40">
           <SimulationIcon className="size-5" />
           <h2 className="font-medium">Simulación</h2>
@@ -348,7 +348,7 @@ export default function Simulator({
       <CardBody className="p-0 flex flex-col gap-2">
         {renderGanttChart()}
 
-        <section className="flex gap-2 justify-center">
+        <section className="flex flex-wrap gap-2 justify-center">
           <div className="flex flex-col justify-center items-center gap-3 p-4 bg-gray-50 rounded-3xl w-40">
             <div>
               <p className="text-xs text-center text-black/30 font-semibold">

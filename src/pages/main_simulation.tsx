@@ -72,7 +72,7 @@ export default function MainSimulation() {
 
   return (
     <div className="h-screen flex flex-grow flex-col bg-gray-100">
-      <header className="bg-foreground text-white p-4 shadow-md">
+      <header className="bg-foreground text-white p-4 shadow-md shrink-0">
         <div className="flex items-center justify-between">
           <h1 className="text-xl font-semibold">
             Simulador de Sistema Operativo
@@ -91,8 +91,8 @@ export default function MainSimulation() {
         </div>
       </header>
 
-      <section className="flex-1 grid grid-cols-3 p-3 gap-3 overflow-auto">
-        <div className="flex flex-col gap-3">
+      <section className="flex-1 grid grid-cols-3 p-3 gap-3 overflow-hidden min-h-0">
+        <div className="flex flex-col gap-3 overflow-auto">
           <Actions
             createProcess={createProcess}
             updateQuantum={setQuantum}
@@ -113,20 +113,24 @@ export default function MainSimulation() {
           <RunQueue queue={displayQueue} />
         </div>
 
-        <div className="col-span-2 flex flex-col gap-3">
-          <ProcessList
-            processes={displayProcesses}
-            removeProcess={removeProcess}
-          />
-          <Simulator
-            timeQuantum={os.timeQuantum}
-            simulationStates={simulationStates}
-            isRunning={isRunning}
-            setIsRunning={setIsRunning}
-            currentStateIndex={currentStateIndex}
-            setCurrentStateIndex={setCurrentStateIndex}
-            dynamic={dynamic}
-          />
+        <div className="col-span-2 flex flex-col gap-3 overflow-hidden min-h-0">
+          <div className="flex-grow overflow-hidden">
+            <ProcessList
+              processes={displayProcesses}
+              removeProcess={removeProcess}
+            />
+          </div>
+          <div className="mt-auto">
+            <Simulator
+              timeQuantum={os.timeQuantum}
+              simulationStates={simulationStates}
+              isRunning={isRunning}
+              setIsRunning={setIsRunning}
+              currentStateIndex={currentStateIndex}
+              setCurrentStateIndex={setCurrentStateIndex}
+              dynamic={dynamic}
+            />
+          </div>
         </div>
       </section>
     </div>

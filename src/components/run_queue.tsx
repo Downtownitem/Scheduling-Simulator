@@ -9,7 +9,7 @@ interface RunQueueProps {
 
 export default function RunQueue({ queue }: RunQueueProps) {
   return (
-    <Card className="flex-grow flex flex-col gap-5 p-5 relative overflow-hidden min-h-52">
+    <Card className="flex-grow flex flex-col gap-5 p-5 relative overflow-hidden min-h-48" shadow="none" radius="lg">
       <CardHeader className="flex items-center justify-between p-0 text-black/40">
         <div className="flex items-center gap-2">
           <StackIcon className="size-5" />
@@ -22,11 +22,8 @@ export default function RunQueue({ queue }: RunQueueProps) {
         )}
       </CardHeader>
       <CardBody className="p-0 flex-grow">
-        {/* Contenedor principal sin overflow - solo para mantener la estructura */}
         <div className="relative w-full h-full">
-          {/* Contenedor de desplazamiento horizontal único */}
-          <div className="absolute inset-0 overflow-x-auto overflow-y-hidden pb-4 pt-2 px-1 no-scrollbar">
-            {/* Contenedor de tarjetas con distancia entre ellas */}
+          <div className="absolute inset-0 overflow-x-auto overflow-y-hidden">
             <div className="flex gap-4 min-w-full">
               {queue.filter((process) => process.state !== "finished").length >
               0 ? (

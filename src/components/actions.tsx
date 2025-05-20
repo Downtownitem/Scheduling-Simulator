@@ -53,7 +53,7 @@ export default function ProcessControls({
   setMemory,
 }: ProcessControlsParams) {
   return (
-    <Card className="flex flex-col gap-5 p-5">
+    <Card className="flex flex-col gap-5 p-5" shadow="none" radius="lg">
       <CardHeader className="flex items-center gap-2 p-0 text-black/40">
         <ComandLineIcon className="size-5" />
         <h2 className="font-medium">Acciones</h2>

@@ -1,0 +1,12 @@
+services:
+  nginx:
+    container_name: webserver
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./certificates:/etc/nginx/ssl:ro

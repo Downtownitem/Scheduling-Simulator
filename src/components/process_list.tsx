@@ -17,12 +17,12 @@ import { DeleteIcon, ElectronicsIcon } from "../utils/icons";
 
 interface ProcessListProps {
   processes: ProcessInterface[];
-  onKillProcess: (pid: number) => void;
+  removeProcess: (pid: number) => void;
 }
 
 export default function ProcessList({
   processes,
-  onKillProcess,
+  removeProcess,
 }: ProcessListProps) {
   return (
     <Card className="flex flex-col gap-5 p-5 flex-grow" shadow="lg" radius="lg">
@@ -78,7 +78,12 @@ export default function ProcessList({
                       : "Esperando"}
                   </Chip>
                 </TableCell>
-                <TableCell>{process.memoryRequired}MB</TableCell>
+                <TableCell>
+                  <p className="flex items-center gap-1">
+                    {process.memoryRequired}{" "}
+                    <span className="text-xs text-gray-500">MB</span>
+                  </p>
+                </TableCell>
                 <TableCell>
                   <Progress
                     value={
@@ -92,14 +97,19 @@ export default function ProcessList({
                     {process.currentExecution}/{process.executionTime}
                   </div>
                 </TableCell>
-                <TableCell>{process.timeout}</TableCell>
+                <TableCell>
+                  <p className="flex items-center gap-1">
+                    {process.timeout}
+                    <span className="text-xs text-gray-500">ms</span>
+                  </p>
+                </TableCell>
                 <TableCell>
                   {process.state !== "finished" && (
                     <Button
                       color="danger"
                       variant="bordered"
                       size="sm"
-                      onPress={() => onKillProcess(process.pid)}
+                      onPress={() => removeProcess(process.pid)}
                       startContent={<DeleteIcon className="size-4" />}
                     >
                       Eliminar

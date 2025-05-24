@@ -1,0 +1,29 @@
+Scheduling_Simulator - Round Robin
+	Este proyecto es un simulador de planificación de procesos utilizando el algoritmo Round Robin, diseñado para ejecutarse fácilmente en contenedores usando Docker.
+	El simulador reproduce conceptualmente:
+		1. La creación y gestión de procesos con PID, nombre y estado.
+		2. La planificación de CPU con Round Robin, incluyendo quantum configurable.
+		3. La asignación y liberación de memoria.
+		4. Una interfaz interactiva para visualizar colas de ejecución, memoria, y el diagrama de planificación.
+Características
+1. Interfaz con controles: iniciar, avanzar, retroceder, finalizar, modo automático, normal o rápido.
+2. Diagrama de Gantt para visualizar el uso del CPU.
+3. Simulación de memoria con barra de uso y validación de disponibilidad.
+4. Tabla de procesos en tiempo real.
+5. Ejecución paso a paso para facilitar el aprendizaje.
+6. Totalmente contenerizado con Docker para facilitar su ejecución.
+Requisitos
+Para ejecutar este proyecto, necesitas tener instalado:
+🐳 Docker
+Una vez clonado el repositorio (con git clone o clonarlo con ayuda de github desktop), simplemente ejecuta:
+docker compose up, el cual levantará todos los servicios necesarios
+Luego ingrese al navegador y escriba:
+http://localhost:8000
+
+Proyecto realizado por:
+Daniel Martínez Medina – 200180871
+Nicole Murillo Galindo – 200181355
+Universidad del Norte
+Grupo Presencial 2284
+Docente: Paul Sanmartín Mendoza
+Fecha: Mayo 2025
